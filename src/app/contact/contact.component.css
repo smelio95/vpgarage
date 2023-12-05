@@ -1,62 +1,66 @@
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 400px;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  margin: auto;
 }
 
 h2 {
-    margin: auto;
-    text-align: center;
+  margin: auto;
+  text-align: center;
 }
 
 p {
-    font-size: 16px; /* Taille de police par défaut */
-    text-align: center;
-    margin: auto;
-  }
+  font-size: 16px;
+  /* Taille de police par défaut */
+  text-align: center;
+  margin: auto;
+}
 
-  /* Styles pour les petits écrans */
-  @media (max-width: 576px) {
-    p {
-      font-size: 14px; /* Taille de police réduite pour les petits écrans */
-    }
+/* Styles pour les petits écrans */
+@media (max-width: 576px) {
+  p {
+    font-size: 14px;
+    /* Taille de police réduite pour les petits écrans */
   }
+}
 
-  /* Styles pour les écrans moyens */
-  @media (min-width: 577px) and (max-width: 992px) {
-    p {
-      font-size: 16px; /* Taille de police moyenne pour les écrans moyens */
-    }
+/* Styles pour les écrans moyens */
+@media (min-width: 577px) and (max-width: 992px) {
+  p {
+    font-size: 16px;
+    /* Taille de police moyenne pour les écrans moyens */
   }
+}
 
-  /* Styles pour les grands écrans */
-  @media (min-width: 993px) {
-    p {
-      font-size: 18px; /* Taille de police augmentée pour les grands écrans */
-    }
+/* Styles pour les grands écrans */
+@media (min-width: 993px) {
+  p {
+    font-size: 18px;
+    /* Taille de police augmentée pour les grands écrans */
   }
+}
 
 .form-group {
-    position: relative;
-    margin-bottom: 20px;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 8px;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  
-  .form-control:focus + label,
-.form-control:valid + label {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus+label,
+.form-control:valid+label {
   top: -20px;
   left: 0;
   font-size: 12px;

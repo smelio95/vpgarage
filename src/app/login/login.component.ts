@@ -1,9 +1,9 @@
 // login.component.ts (Frontend)
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
 import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
     selector: 'app-login',
@@ -20,16 +20,15 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin() {
-    const loginData = { email: this.email, password: this.password };
 
-    this.authService.login(loginData).subscribe(
+    this.authService.login(this.email, this.password).subscribe(
       (response: any) => {
         // Gérez la réponse de l'API ici
         console.log(response);
 
         if (response && response.success) {
           // La connexion est réussie, vous pouvez rediriger l'utilisateur vers une page appropriée ici
-          this.router.navigate(['/admin']); // Remplacez '/dashboard' par la page souhaitée
+          this.router.navigate(['/admin']); 
 
           // Afficher le message d'authentification réussie dans la variable authenticationMessage
           this.authenticationMessage = 'Authentification réussie';
@@ -40,13 +39,6 @@ export class LoginComponent {
           // Réinitialiser la variable authenticationMessage en cas d'échec d'authentification
           this.authenticationMessage = '';
         }
-      },
-      (error) => {
-        // Gérez les erreurs d'authentification ici, par exemple, affichez un message d'erreur.
-        console.error(error);
-
-        // Réinitialiser la variable authenticationMessage en cas d'erreur d'authentification
-        this.authenticationMessage = '';
       }
     );
   }
